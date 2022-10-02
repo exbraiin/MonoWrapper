@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/JCarlos/Documents/MonoGame/MonoWrapper/MonoWrapper/Content/Arial.spritefont","C:/Users/JCarlos/Documents/MonoGame/MonoWrapper/MonoWrapper/Content/bin/DesktopGL/Arial.xnb","LocalizedFontProcessor","SpriteFontContent",2431,37922,0.2264651
+"C:/Users/JCarlos/Documents/MonoGame/MonoWrapper/MonoWrapper/Content/Rubik.spritefont","C:/Users/JCarlos/Documents/MonoGame/MonoWrapper/MonoWrapper/Content/bin/DesktopGL/Rubik.xnb","LocalizedFontProcessor","SpriteFontContent",2431,21538,0.0239586
