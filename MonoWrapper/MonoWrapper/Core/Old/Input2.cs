@@ -98,7 +98,7 @@ namespace MonoWrapper
         }
 
         /// <summary>
-        ///     Gets whether the given <see cref="Keys"/> is pressed or holded in the current frame.
+        ///     Gets whether the given <see cref="Keys"/> is pressed or held in the current frame.
         /// </summary>
         public static bool GetKey (Keys key)
         {
@@ -122,7 +122,7 @@ namespace MonoWrapper
         }
 
         /// <summary>
-        ///     Gets whether the given mouse button (by index) is pressed or holded in the current frame.
+        ///     Gets whether the given mouse button (by index) is pressed or held in the current frame.
         ///     <para>Index 0 if the left button, 1 right button, 2 middle button, 3 and 4 the extra buttons.</para>
         /// </summary>
         public static bool GetMouseButton (int index)
@@ -221,7 +221,7 @@ namespace MonoWrapper
         }
 
         /// <summary>
-        ///     Gets whether the given <see cref="Buttons"/> is pressed or holded in the current frame.
+        ///     Gets whether the given <see cref="Buttons"/> is pressed or held in the current frame.
         /// </summary>
         public bool GetButton (Buttons button)
         {
