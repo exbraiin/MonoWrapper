@@ -2,22 +2,22 @@
 
 A Monogame wrapper library.
 
-## Why
-
-This is a dynamic library in order to work with monogame framework.
+This is a dynamic library that works together with the [Monogame](https://monogame.net/) framework.
 
 This was written to simplify the access to window, input and other systems without having to re-write the code every time.
 
 ## How to use
 
-Just download and import the dll.
+Just download and import the [MonoWrapper.dll](bin/Release/net6.0/MonoWrapper.dll).
 
 Here is an example of how to use it to draw a red rectangle in a single scene:
 
 ```csharp
-public static class Program {
+public static class Program
+{
     [STAThread]
-    static void Main(){
+    static void Main()
+    {
         Window.Title = "Some Title!";
         Window.IsMouseVisible = true;
         Window.Size = new Point(800, 450);
@@ -29,11 +29,13 @@ public static class Program {
     }
 }
 
-public class RootScene : Scene {
+public class RootScene : Scene
+{
 
     private SpriteBatch _batch;
 
-    public override void Initialize() {
+    public override void Initialize()
+    {
         _batch = new SpriteBatch(Window.GraphicsDevice);
     }
 
@@ -44,7 +46,8 @@ public class RootScene : Scene {
 
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             Application.Exit();
         }
     }
