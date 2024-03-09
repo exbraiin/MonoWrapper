@@ -1,0 +1,12 @@
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.csproj.AssemblyReference.cache
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.AssemblyInfoInputs.cache
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.AssemblyInfo.cs
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.csproj.CoreCompileInputs.cache
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\bin\Release\net6.0\MonoWrapper.deps.json
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\bin\Release\net6.0\MonoWrapper.dll
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\bin\Release\net6.0\MonoWrapper.pdb
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.dll
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\refint\MonoWrapper.dll
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\MonoWrapper.pdb
+C:\Users\JCarlos\Desktop\Xna\MonoWrapper\obj\Release\net6.0\ref\MonoWrapper.dll

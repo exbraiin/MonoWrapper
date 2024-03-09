@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoWrapper", "MonoWrapper\MonoWrapper.csproj", "{A049EF86-0897-4853-9FA0-8C83382E85AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoWrapper", "MonoWrapper.csproj", "{2A57E51B-6F79-4298-AD4E-77199B38A03D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A049EF86-0897-4853-9FA0-8C83382E85AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A049EF86-0897-4853-9FA0-8C83382E85AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A049EF86-0897-4853-9FA0-8C83382E85AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A049EF86-0897-4853-9FA0-8C83382E85AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A57E51B-6F79-4298-AD4E-77199B38A03D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A57E51B-6F79-4298-AD4E-77199B38A03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A57E51B-6F79-4298-AD4E-77199B38A03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A57E51B-6F79-4298-AD4E-77199B38A03D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {ECF4EB82-B26B-484D-A6DB-7C299C7F3AE5}
+		SolutionGuid = {1C8E9D4B-ACFC-455F-A6DF-9B0283662757}
 	EndGlobalSection
 EndGlobal

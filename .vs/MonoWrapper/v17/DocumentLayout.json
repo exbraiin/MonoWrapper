@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\monowrapper.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:monowrapper.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\monowrapper\\components\\imagefit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:monowrapper\\components\\imagefit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\monowrapper\\components\\textureninepatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:monowrapper\\components\\textureninepatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\monowrapper\\components\\transform2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:monowrapper\\components\\transform2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\tests\\controllerscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:tests\\controllerscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\tests\\metricsscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:tests\\metricsscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|c:\\users\\jcarlos\\desktop\\xna\\monowrapper\\tests\\textbarscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A57E51B-6F79-4298-AD4E-77199B38A03D}|MonoWrapper.csproj|solutionrelative:tests\\textbarscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T18:51:39.124Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImageFit.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper\\Components\\ImageFit.cs",
+              "RelativeDocumentMoniker": "MonoWrapper\\Components\\ImageFit.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper\\Components\\ImageFit.cs",
+              "RelativeToolTip": "MonoWrapper\\Components\\ImageFit.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T22:09:09.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Transform2D.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper\\Components\\Transform2D.cs",
+              "RelativeDocumentMoniker": "MonoWrapper\\Components\\Transform2D.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper\\Components\\Transform2D.cs",
+              "RelativeToolTip": "MonoWrapper\\Components\\Transform2D.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T22:08:34.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TextureNinePatch.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper\\Components\\TextureNinePatch.cs",
+              "RelativeDocumentMoniker": "MonoWrapper\\Components\\TextureNinePatch.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper\\Components\\TextureNinePatch.cs",
+              "RelativeToolTip": "MonoWrapper\\Components\\TextureNinePatch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T22:09:06.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MonoWrapper",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper.csproj",
+              "RelativeDocumentMoniker": "MonoWrapper.csproj",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\MonoWrapper.csproj",
+              "RelativeToolTip": "MonoWrapper.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-08T19:17:01.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TextBarScene.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Tests\\TextBarScene.cs",
+              "RelativeDocumentMoniker": "Tests\\TextBarScene.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Tests\\TextBarScene.cs",
+              "RelativeToolTip": "Tests\\TextBarScene.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T19:15:43.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MetricsScene.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Tests\\MetricsScene.cs",
+              "RelativeDocumentMoniker": "Tests\\MetricsScene.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Tests\\MetricsScene.cs",
+              "RelativeToolTip": "Tests\\MetricsScene.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T19:15:42.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControllerScene.cs",
+              "DocumentMoniker": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Tests\\ControllerScene.cs",
+              "RelativeDocumentMoniker": "Tests\\ControllerScene.cs",
+              "ToolTip": "C:\\Users\\JCarlos\\Desktop\\Xna\\MonoWrapper\\Tests\\ControllerScene.cs",
+              "RelativeToolTip": "Tests\\ControllerScene.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T19:15:40.649Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
