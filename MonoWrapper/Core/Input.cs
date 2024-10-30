@@ -1,34 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace MonoWrapper
 {
-    internal enum KeyState { None, Down, Hold, Released, }
-
     public static class Input
     {
-        public static bool NumLock { get; private set; }
-        public static bool CapsLock { get; private set; }
-        public static Point MouseScroll { get; private set; }
-        public static Point MousePosition => Mouse.GetState().Position;
+        public static bool NumLock => _currentKeyboardState.NumLock;
+        public static bool CapsLock => _currentKeyboardState.CapsLock;
+        public static Point MouseScroll
+        {
+            get
+            {
+                var py = _previousMouseState.ScrollWheelValue;
+                var px = _previousMouseState.HorizontalScrollWheelValue;
+                var cy = _currentMouseState.ScrollWheelValue;
+                var cx = _currentMouseState.HorizontalScrollWheelValue;
+
+                var x = px < cx ? 1 : px > cx ? -1 : 0;
+                var y = py < cy ? 1 : py > cy ? -1 : 0;
+
+                return new Point(x, y);
+            }
+        }
+        public static Point MousePosition => _currentMouseState.Position;
         public static int MaximumGamePadCount => statesGamePad.Length;
 
-        private static Point lastMouseScroll;
+        private static MouseState _currentMouseState = new MouseState();
+        private static MouseState _previousMouseState = new MouseState();
 
-        private static MouseState? stateMouse;
-        private static KeyboardState? stateKeyboard;
+        private static KeyboardState _currentKeyboardState = new KeyboardState();
+        private static KeyboardState _previousKeyboardState = new KeyboardState();
 
-        private static readonly KeyState[] statesMouse;
-        private static readonly Dictionary<KeyCode, KeyState> statesKeyboard;
         private static readonly GamepadState[] statesGamePad;
 
         static Input()
         {
-            statesMouse = new KeyState[5];
-            statesKeyboard = new Dictionary<KeyCode, KeyState>(EnumUtils.GetValues<KeyCode>().Select(k => KeyValuePair.Create(k, KeyState.None)));
             statesGamePad = Enumerable.Range(0, GamePad.MaximumGamePadCount).Select(i => new GamepadState(i)).ToArray();
         }
 
@@ -41,45 +49,14 @@ namespace MonoWrapper
 
         private static void UpdateKeyboard()
         {
-            var state = Keyboard.GetState();
-            if (state == stateKeyboard) return;
-            stateKeyboard = state;
-
-            NumLock = state.NumLock;
-            CapsLock = state.CapsLock;
-
-            foreach (var key in statesKeyboard.Keys.ToArray())
-            {
-                var down = state.IsKeyDown((Keys)key);
-                var next = statesKeyboard[key] = statesKeyboard[key].Next(down);
-                if (next != KeyState.None) stateKeyboard = default;
-            }
+            _previousKeyboardState = _currentKeyboardState;
+            _currentKeyboardState = Keyboard.GetState();
         }
 
         private static void UpdateMouse()
         {
-            var state = MouseButtonsState();
-            if (state == stateMouse) return;
-            stateMouse = state;
-
-            var states = new[] { state.LeftButton, state.RightButton, state.MiddleButton, state.XButton1, state.XButton2 };
-            for (var i = 0; i < statesMouse.Length; ++i)
-            {
-                var next = statesMouse[i] = statesMouse[i].Next(states[i] == ButtonState.Pressed);
-                if (next != KeyState.None) stateMouse = default;
-            }
-
-            var my = state.ScrollWheelValue;
-            var mx = state.HorizontalScrollWheelValue;
-
-            var x = lastMouseScroll.X < mx ? 1 : lastMouseScroll.X > mx ? -1 : 0;
-            var y = lastMouseScroll.Y < my ? 1 : lastMouseScroll.Y > my ? -1 : 0;
-
-            MouseScroll = new Point(x, y);
-            if (MouseScroll != Point.Zero) stateMouse = default;
-
-            lastMouseScroll.X = mx;
-            lastMouseScroll.Y = my;
+            _previousMouseState = _currentMouseState;
+            _currentMouseState = Mouse.GetState();
         }
 
         private static void UpdateGamePads()
@@ -87,21 +64,12 @@ namespace MonoWrapper
             foreach (var state in statesGamePad) state.Update();
         }
 
-        private static MouseState MouseButtonsState()
-        {
-            var state = Mouse.GetState();
-            return new MouseState(
-                0, 0, state.ScrollWheelValue,
-                state.LeftButton, state.MiddleButton, state.RightButton,
-                state.XButton1, state.XButton2, state.HorizontalScrollWheelValue);
-        }
-
         /// <summary>
         ///     Gets whether the given <see cref="KeyCode"/> is pressed or held in the current frame.
         /// </summary>
         public static bool GetKey(KeyCode key)
         {
-            return statesKeyboard.ContainsKey(key) && (statesKeyboard[key] == KeyState.Down || statesKeyboard[key] == KeyState.Hold);
+            return _currentKeyboardState.IsKeyDown((Keys)key);
         }
 
         /// <summary>
@@ -109,7 +77,7 @@ namespace MonoWrapper
         /// </summary>
         public static bool GetKeyUp(KeyCode key)
         {
-            return statesKeyboard.ContainsKey(key) && statesKeyboard[key] == KeyState.Released;
+            return _previousKeyboardState.IsKeyDown((Keys)key) && _currentKeyboardState.IsKeyUp((Keys)key);
         }
 
         /// <summary>
@@ -117,7 +85,7 @@ namespace MonoWrapper
         /// </summary>
         public static bool GetKeyDown(KeyCode key)
         {
-            return statesKeyboard.ContainsKey(key) && statesKeyboard[key] == KeyState.Down;
+            return _previousKeyboardState.IsKeyUp((Keys)key) && _currentKeyboardState.IsKeyDown((Keys)key);
         }
 
         /// <summary>
@@ -126,7 +94,7 @@ namespace MonoWrapper
         /// </summary>
         public static bool GetMouseButton(int index)
         {
-            return 0 <= index && index < statesMouse.Length && statesMouse[index] == KeyState.Down || statesMouse[index] == KeyState.Hold;
+            return _currentMouseState.GetButtonState(index) == ButtonState.Pressed;
         }
 
         /// <summary>
@@ -135,7 +103,7 @@ namespace MonoWrapper
         /// </summary>
         public static bool GetMouseButtonUp(int index)
         {
-            return 0 <= index && index < statesMouse.Length && statesMouse[index] == KeyState.Released;
+            return _previousMouseState.GetButtonState(index) == ButtonState.Pressed && _currentMouseState.GetButtonState(index) == ButtonState.Released;
         }
 
         /// <summary>
@@ -144,7 +112,7 @@ namespace MonoWrapper
         /// </summary>
         public static bool GetMouseButtonDown(int index)
         {
-            return 0 <= index && index < statesMouse.Length && statesMouse[index] == KeyState.Down;
+            return _previousMouseState.GetButtonState(index) == ButtonState.Released && _currentMouseState.GetButtonState(index) == ButtonState.Pressed;
         }
 
         /// <summary>
@@ -160,43 +128,35 @@ namespace MonoWrapper
     public sealed class GamepadState
     {
         private float vibration;
-        private GamePadState? lastState;
-        private GamePadState State => GamePad.GetState(Index);
-        private readonly Dictionary<GamepadButton, KeyState> states;
+
+        private GamePadState _currentState;
+        private GamePadState _previousState;
 
         public int Index { get; }
-        public int PacketNumber => State.PacketNumber;
-        public bool IsConnected => State.IsConnected;
+        public int PacketNumber => _currentState.PacketNumber;
+        public bool IsConnected => _currentState.IsConnected;
 
-        public float LeftTrigger => State.Triggers.Left;
-        public float RightTrigger => State.Triggers.Right;
+        public float LeftTrigger => _currentState.Triggers.Left;
+        public float RightTrigger => _currentState.Triggers.Right;
 
-        public Vector2 LeftThumbStick => State.ThumbSticks.Left;
-        public Vector2 RightThumbStick => State.ThumbSticks.Right;
+        public Vector2 LeftThumbStick => _currentState.ThumbSticks.Left;
+        public Vector2 RightThumbStick => _currentState.ThumbSticks.Right;
 
         internal GamepadState(int index)
         {
             Index = index;
-            states = new Dictionary<GamepadButton, KeyState>(EnumUtils.GetValues<GamepadButton>().Select(k => KeyValuePair.Create(k, KeyState.None)));
         }
 
         internal void Update()
         {
-            if (lastState == State) return;
-            lastState = State;
-
             if (vibration > 0)
             {
                 vibration -= Time.DeltaTime;
                 if (vibration <= 0) SetVibration(0);
-                else lastState = default;
             }
 
-            foreach (var key in states.Keys.ToArray())
-            {
-                var next = states[key] = states[key].Next(State.IsButtonDown((Buttons)key));
-                if (next != KeyState.None) lastState = default;
-            }
+            _previousState = _currentState;
+            _currentState = GamePad.GetState(Index);
         }
 
         /// <summary>
@@ -224,7 +184,7 @@ namespace MonoWrapper
         /// </summary>
         public bool GetButton(GamepadButton button)
         {
-            return states.ContainsKey(button) && (states[button] == KeyState.Down || states[button] == KeyState.Hold);
+            return _currentState.IsButtonDown((Buttons)button);
         }
 
         /// <summary>
@@ -232,7 +192,7 @@ namespace MonoWrapper
         /// </summary>
         public bool GetButtonUp(GamepadButton button)
         {
-            return states.ContainsKey(button) && states[button] == KeyState.Released;
+            return _previousState.IsButtonDown((Buttons)button) && _currentState.IsButtonUp((Buttons)button);
         }
 
         /// <summary>
@@ -240,24 +200,23 @@ namespace MonoWrapper
         /// </summary>
         public bool GetButtonDown(GamepadButton button)
         {
-            return states.ContainsKey(button) && states[button] == KeyState.Down;
+            return _previousState.IsButtonUp((Buttons)button) && _currentState.IsButtonDown((Buttons)button);
         }
     }
 
     internal static class InputExtensions
     {
-        public static KeyState Next(this KeyState state, bool down)
+        public static ButtonState? GetButtonState(this MouseState mouse, int index)
         {
-            var s = state == KeyState.None && down || state == KeyState.Down || state == KeyState.Hold && !down || state == KeyState.Released;
-            return (KeyState)(((int)state + (s ? 1 : 0)) % 4);
-        }
-    }
-
-    internal static class EnumUtils
-    {
-        public static T[] GetValues<T>() where T : struct
-        {
-            return (T[])Enum.GetValues(typeof(T));
+            return index switch
+            {
+                0 => mouse.LeftButton,
+                1 => mouse.RightButton,
+                2 => mouse.MiddleButton,
+                3 => mouse.XButton1,
+                4 => mouse.XButton2,
+                _ => null,
+            };
         }
     }
 }

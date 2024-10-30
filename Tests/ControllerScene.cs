@@ -61,12 +61,14 @@ namespace MonoWrapper.Testing
 
             if (connected != -1)
             {
+                /*
                 var gp = Input.GetGamepad(connected);
                 builder.AppendLine(gp.IsConnected.ToString());
                 foreach (var bt in EnumUtils.GetValues<GamepadButton>())
                 {
                     builder.AppendLine($"{bt}: {gp.GetButton(bt)}");
                 }
+                */
             }
 
             batch.Begin();

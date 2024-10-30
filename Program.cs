@@ -15,9 +15,10 @@ namespace MonoWrapper
 
             // SceneManager.AddScene("lol", () => new TestingWrapper());
             // SceneManager.AddScene("main", () => new MetricsScene());
-            SceneManager.AddScene("controller", () => new ControllerScene());
-            SceneManager.AddScene("", () => new MetricsScene());
-            SceneManager.AddScene("main", () => new TextBarScene());
+            // SceneManager.AddScene("controller", () => new ControllerScene());
+            // SceneManager.AddScene("", () => new MetricsScene());
+            // SceneManager.AddScene("main", () => new TextBarScene());
+            SceneManager.AddScene("console", () => new ConsoleTest());
 
             Application.Run();
 
@@ -28,6 +29,39 @@ namespace MonoWrapper
             // SceneManager.AddScene("main", () => new TestScene());
             // SceneManager.AddScene("counter", () => new CounterScene());
             // Application.Run();
+        }
+    }
+
+    public class ConsoleTest : Scene
+    {
+        public override void Update()
+        {
+
+            var down = Input.GetKeyDown(KeyCode.P);
+            var key = Input.GetKey(KeyCode.P);
+            var up = Input.GetKeyUp(KeyCode.P);
+
+            if (down || key || up)
+            {
+                Console.WriteLine(Time.FrameCount);
+                Console.WriteLine($"KeyDown: {down}");
+                Console.WriteLine($"Key: {key}");
+                Console.WriteLine($"KeyUp: {up}");
+            }
+
+            var mdown = Input.GetMouseButtonDown(0);
+            var mkey = Input.GetMouseButton(0);
+            var mup = Input.GetMouseButtonUp(0);
+
+            if (mdown || mkey || mup)
+            {
+                Console.WriteLine(Time.FrameCount);
+                Console.WriteLine($"KeyDown: {mdown}");
+                Console.WriteLine($"Key: {mkey}");
+                Console.WriteLine($"KeyUp: {mup}");
+            }
+
+            Console.WriteLine(Input.MouseScroll);
         }
     }
 

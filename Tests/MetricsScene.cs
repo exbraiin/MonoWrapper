@@ -95,10 +95,12 @@ namespace MonoWrapper.Testing
 
             builder.AppendLine();
 
+            /*
             foreach (var button in EnumUtils.GetValues<GamepadButton>())
             {
                 builder.AppendLine($"{button}: {gamePad.GetButton(button)}");
             }
+            */
         }
     }
 }
